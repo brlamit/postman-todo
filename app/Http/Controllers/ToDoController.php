@@ -38,7 +38,7 @@ class ToDoController extends Controller
             'description' => 'nullable|string',
             'due_date' => 'nullable|date',
             'priority' => 'required|in:low,medium,high',
-            'status' => 'required|in:pending,in_progress,completed',
+            'status' => 'required|in:pending,in_progress,completed,archived,not_started,cancelled',
         ]);
 
         $user = Auth::guard('sanctum')->user();
@@ -93,7 +93,7 @@ class ToDoController extends Controller
             'description' => 'sometimes|nullable|string',
             'due_date' => 'sometimes|nullable|date',
             'priority' => 'sometimes|in:low,medium,high',
-            'status' => 'sometimes|in:pending,in_progress,completed',
+            'status' => 'sometimes|in:pending,in_progress,completed,archived,not_started,cancelled',
             'completed' => 'sometimes|boolean',
         ]);
 
